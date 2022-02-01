@@ -1,8 +1,13 @@
 package org.generation.blogPessoal.model;
 
+/* Cria ogjetos  baseado nos dados da tabela Usuario para instanciar um ogjeto que cerve para autenticar o usuario
+ * e permitir um login 
+ */
+
 public class UsuarioLogin {
 
-	private Long id;
+	private Long id; /*Long maiusculo e um ogjeto primitivo que permite valores nulos.
+	 					long minusculo e um ogeto que não permite valores nulos*/	
 
 	private String nome;
 

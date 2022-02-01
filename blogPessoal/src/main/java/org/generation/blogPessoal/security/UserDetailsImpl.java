@@ -11,7 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 *  o Spring Security,ou seja, detalha as caracteríticas do usuário.
 */
 
-/*   Por se tratar de uma implementação de uma interface, a classe
+/*  Impl:
+ *  Por se tratar de uma implementação de uma interface, a classe
 *   deve ter em seu nome o sufixo Impl para indicar que se trata de
 *   uma implementação.
 */

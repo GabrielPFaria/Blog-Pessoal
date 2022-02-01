@@ -1,5 +1,7 @@
 package org.generation.blogPessoal.model;
 
+/*Cria a tabela no banco de dados*/
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -32,14 +34,31 @@ public class Usuario {
 	private String usuario;
 
 	@NotBlank(message = "O atributo Senha é Obrigatório!")
-	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
+	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres, o massimo não precissas ser definido pos acriptografia po ter muitos caracterres")
 	private String senha;
 
-	private String foto;
+	private String foto;/*Linke para uma imagem não um uploud*/
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)/*Cascade diz que tudo dentro deste atribubo e abagado junto com ele*/
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+	
+	
+	//Metodo construtor - com atributos
+	
+	public Usuario(Long id,  String nome,String usuario,String senha,String foto) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+		
+	}
+	
+	
+	public Usuario() {}
+
 
 	public Long getId() {
 		return id;

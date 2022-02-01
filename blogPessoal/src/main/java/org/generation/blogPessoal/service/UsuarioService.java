@@ -1,5 +1,7 @@
 package org.generation.blogPessoal.service;
 
+//Conten as regras de negocio a logica da ApI
+
 import java.nio.charset.Charset;
 import java.util.Optional;
 
@@ -30,6 +32,7 @@ public class UsuarioService {
 	
 	}
 
+	
 	public Optional<Usuario> atualizarUsuario(Usuario usuario) {
 
 		
@@ -50,6 +53,7 @@ public class UsuarioService {
 			return Optional.empty();
 	
 	}	
+	
 
 	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) {
 
@@ -72,6 +76,7 @@ public class UsuarioService {
 		return Optional.empty();
 		
 	}
+	
 
 	private String criptografarSenha(String senha) {
 
