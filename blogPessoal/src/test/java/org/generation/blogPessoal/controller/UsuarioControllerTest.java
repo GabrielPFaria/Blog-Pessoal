@@ -99,7 +99,7 @@ public class UsuarioControllerTest {
 
 		ResponseEntity<String> resposta = testRestTemplate
 			.withBasicAuth("root", "root")
-			.exchange("/usuarios/listar", HttpMethod.GET, null, String.class);
+			.exchange("/usuarios/all", HttpMethod.GET, null, String.class);
 
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());
 	}
