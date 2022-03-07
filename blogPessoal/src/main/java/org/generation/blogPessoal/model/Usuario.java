@@ -18,6 +18,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
@@ -29,6 +31,7 @@ public class Usuario {
 	@NotNull(message = "O atributo Nome é Obrigatório!")
 	private String nome;
 
+	@Schema(example = "email@email.com.br")
 	@NotNull(message = "O atributo Usuário é Obrigatório!")
 	@Email(message = "O atributo Usuário deve ser um email válido!")
 	private String usuario;
@@ -38,6 +41,9 @@ public class Usuario {
 	private String senha;
 
 	private String foto;/*Linke para uma imagem não um uploud*/
+	
+	private String tipo;
+
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)/*Cascade diz que tudo dentro deste atribubo e abagado junto com ele*/
 	@JsonIgnoreProperties("usuario")
@@ -107,5 +113,15 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 
 }

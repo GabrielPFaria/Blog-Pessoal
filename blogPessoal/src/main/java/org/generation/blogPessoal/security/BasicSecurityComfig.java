@@ -50,8 +50,11 @@ public class BasicSecurityComfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.authorizeRequests()
+		.antMatchers("/**").permitAll()
 		.antMatchers("/usuarios/logar").permitAll() //Da autorização a esta rota para permitir o login
 		.antMatchers("/usuarios/cadastrar").permitAll() //Da autorização a esta rota para permitir o Cadastro
+		.antMatchers(HttpMethod.POST ,"/postagens").permitAll()
+        .antMatchers(HttpMethod.POST ,"/temas").permitAll()
 		.antMatchers(HttpMethod.OPTIONS).permitAll() //Permite que estes metodos sejão acessaveis
 		.anyRequest().authenticated()
 		.and().httpBasic()
